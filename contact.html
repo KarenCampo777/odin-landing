@@ -29,52 +29,43 @@
         <br>
         <div class="flex">
             <div class="left">
-                <form action="contact.html" name="RegForm" onsubmit="return validateForm()" onreset="resetErrors()">
-                    <label for="nombre" class="text">Full Name</label>
+                <form action="contact.html" id="contact-form" name="RegForm" onsubmit="return validateForm()"
+                    onreset="resetErrors()">
                     <div class="form-group">
-                        <input type="text" id="name" name="name" class="input" placeholder="Enter your name here..." required/>
+                        <label for="nombre" class="text">Full Name</label>
+                        <input type="text" id="name" name="name" class="input" placeholder="Enter your name here..."
+                            required />
                         <span id="name-error" class="error-message"></span>
                     </div><br>
 
                     <div class="form-group">
                         <label for="email" class="text">e-mail</label>
-                        <input
-                        type="text"
-                        id="email"
-                        name="email"
-                        class="input"
-                        placeholder="Enter your email here..." required/>
+                        <input type="email" id="email" name="email" class="input" placeholder="Enter your email here..."
+                            required />
                         <span id="email-error" class="error-message"></span>
                     </div>
                     <br>
 
                     <div class="form-group">
                         <label for="subject" class="text">Subject</label>
-                        <input
-                        type="text"
-                        type="subject"
-                        name="subject"
-                        class="input"
-                        placeholder="Enter your email here..." required/>
+                        <input type="text" id="subject" name="subject" class="input"
+                            placeholder="Enter your email here..." required />
                         <span id="suject-error" class="error-message"></span>
                     </div><br>
 
                     <div class="form-group">
                         <label for="message" class="text">Message</label>
-                        <textarea
-                        name="message"
-                        id="message"
-                        class="input"
-                        required placeholder="Enter your subject here..." 
-                        rows="8">
+                        <textarea name="message" id="message" class="input" required
+                            placeholder="Enter your subject here..." rows="8">
                         </textarea>
                         <span id="message-error" class="error-message"></span>
-                        
+
                     </div><br>
 
                 </form><br>
 
-                <button class="cta-button message-error" type="submit" value="send" name="submit" style="font-weight: bold;">Submit</button>
+                <button class="cta-button message-error" type="submit" value="send" name="submit"
+                    style="font-weight: bold;">Submit</button>
             </div>
 
 
@@ -106,7 +97,9 @@
         <p class="text">&copy; Karen Campo, Cali - Colombia. </p>
     </footer>
 
-    <script src="./js/script2.js"></script>
+    <script src="/.js/script2.js">
+
+    </script>
 </body>
 
 </html>

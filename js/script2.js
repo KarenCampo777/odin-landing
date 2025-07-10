@@ -1,18 +1,32 @@
-const inputs = document.querySelectorAll(".input");
 
-function focusFunc() {
-  let parent = this.parentNode;
-  parent.classList.add("focus");
-}
+document.getElementById("contact-form").addEventListener("submit", async (event) => {
+  event.preventDefault();
 
-function blurFunc() {
-  let parent = this.parentNode;
-  if (this.value == "") {
-    parent.classList.remove("focus");
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const subject = document.getElementById("subject").value;
+  const message = document.getElementById("message").value;
+
+  try {
+    const response = await fetch("http://localhost:5000/auth/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, email, subject, message }),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      localStorage.setItem("token", data.token);
+      alert("Contact form was succefully submited");
+      window.location.href = "contact.html";
+    } else {
+      alert(data.error || "Error, please validate your data.");
+    }
+  } catch (error) {
+    console.error("Conection error:", error);
+    alert("Couldn't connect with server");
   }
-}
-
-inputs.forEach((input) => {
-  input.addEventListener("focus", focusFunc);
-  input.addEventListener("blur", blurFunc);
 });
